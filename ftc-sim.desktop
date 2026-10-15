@@ -1,0 +1,8 @@
+[Desktop Entry]
+Type=Application
+Name=FTC Simulator
+Comment=Pull the latest team code and launch the virtual_robot simulator
+Exec=@TOOLS@/deck-launch.sh
+Icon=@ICON@
+Terminal=false
+Categories=Education;

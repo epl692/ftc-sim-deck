@@ -1,0 +1,10 @@
+# JDK 17 + OpenJFX for building and running the virtual_robot simulator.
+# (Liberica has no public "full" container image, so JavaFX comes from Debian's openjfx package.)
+FROM docker.io/bellsoft/liberica-openjdk-debian:17
+
+RUN apt-get update \
+ && apt-get install -y --no-install-recommends openjfx libgtk-3-0 libxtst6 libxxf86vm1 libgl1 libgl1-mesa-dri fonts-dejavu-core \
+ && rm -rf /var/lib/apt/lists/*
+
+ENV FX_PATH=/usr/share/openjfx/lib
+WORKDIR /sim
