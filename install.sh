@@ -29,7 +29,7 @@ DESKTOP_DIR="${DESKTOP_DIR:-$HOME/Desktop}"
 mkdir -p "$DATA/applications" "$DATA/icons"
 cp "$TOOLS/ftc-sim.png" "$DATA/icons/ftc-sim.png"
 DESKTOP="$DATA/applications/ftc-sim.desktop"
-sed -e "s|@TOOLS@|$TOOLS|g" -e "s|@ICON@|$HOME/.local/share/icons/ftc-sim.png|g" "$TOOLS/ftc-sim.desktop" > "$DESKTOP"
+sed -e "s|@TOOLS@|$TOOLS|g" -e "s|@ICON@|$DATA/icons/ftc-sim.png|g" "$TOOLS/ftc-sim.desktop" > "$DESKTOP"
 chmod +x "$DESKTOP"
 if [ -d "$DESKTOP_DIR" ]; then cp "$DESKTOP" "$DESKTOP_DIR/ftc-sim.desktop"; chmod +x "$DESKTOP_DIR/ftc-sim.desktop"; fi
 
