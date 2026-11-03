@@ -8,6 +8,14 @@ Runs the [virtual_robot](https://github.com/epl692/virtual_robot_ftc) FTC simula
 
 This clones everything into `~/ftc-sim`, builds the container image, and adds an **FTC Simulator** launcher to the desktop, the app menu and (via `steamos-add-to-steam`) the Steam library for game mode.
 
+## Install (Windows 10/11)
+
+Runs the same container inside WSL2 (the display goes through WSLg, built into Windows 11 and recent Windows 10). In PowerShell:
+
+    irm https://raw.githubusercontent.com/epl692/ftc-sim-deck/main/install.ps1 | iex
+
+This installs a dedicated `Ubuntu-24.04` WSL distro with podman and git, runs `install.sh` inside it, and adds an **FTC Simulator** shortcut to the Desktop and Start menu. WSL itself needs admin rights and may ask for a reboot; if so, reboot and run the command again. The GUI uses software rendering, which is fine for the simulator.
+
 ## Use
 
 Launch **FTC Simulator**. Every launch pulls the newest tools, simulator and team code (offline launches use the last copy), then compiles and starts the sim. Log: `~/ftc-sim/last-run.log`.

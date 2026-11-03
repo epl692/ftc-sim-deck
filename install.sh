@@ -23,6 +23,12 @@ TOOLS="$HOME_DIR/tools"
 # Fetch the team code and simulator, then build the container image now so game-mode launches are fast.
 FTC_SIM_HOME="$HOME_DIR" "$TOOLS/deck-launch.sh" --build-only
 
+# Inside WSL (Windows) the launcher is created by install.ps1 on the Windows side.
+if grep -qi microsoft /proc/version 2>/dev/null; then
+    echo "Done (WSL). Launch 'FTC Simulator' from the Windows desktop or Start menu."
+    exit 0
+fi
+
 # Launcher
 DATA="${XDG_DATA_HOME:-$HOME/.local/share}"
 DESKTOP_DIR="${DESKTOP_DIR:-$HOME/Desktop}"
